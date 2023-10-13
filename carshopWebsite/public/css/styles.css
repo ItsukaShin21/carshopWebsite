@@ -1,0 +1,10 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Noto Sans';
+}
+.headerContainer1 {
+    height: 70px;
+    width: 1024px;
+    background: #212121;
+}
