@@ -1,11 +1,11 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = " ";
-$db = "kotcheckdb"
+$password = "";
+$db = "kotcheckdb";  // Added a semicolon here
 
 // Create connection
-$conn = new mysqli($servername, $username, $password,$db);
+$conn = new mysqli($servername, $username, $password, $db);
 
 // Check connection
 if ($conn->connect_error) {
