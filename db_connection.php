@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "kotcheckdb";  // Added a semicolon here
+$db = "kotcheckdb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $db);
