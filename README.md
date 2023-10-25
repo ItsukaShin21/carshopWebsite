@@ -20,17 +20,17 @@ These instructions will get you a copy of the project up and running on your loc
 
 Before you begin, ensure you have met the following requirements:
 
-- You have installed the latest version of __PHP and MySQL__.
-- You have installed __XAMMP__ or __Laragon__ for local webserver or webserver you want to use
+- You have installed the latest version of <ins>PHP and MySQL</ins>.
+- You have installed <ins>XAMMP</ins> or <ins>Laragon</ins> for local webserver or webserver you want to use
 - You have a Windows/Linux/Mac machine.
 
 ### Installation
 
 1. Clone this repository:
-__bash git clone https://github.com/ItsukaShin21/carshopWebsite.git__
+<ins>bash git clone</ins> https://github.com/ItsukaShin21/carshopWebsite.git
 
 2. Navigate to the project directory:
-__bash cd carshopWebsite__
+<ins>bash cd carshopWebsite</ins>
 
 ## Usage
 
@@ -45,7 +45,7 @@ To use the car shop management website, follow these steps:
 
 ## Contributing
 
-If you want to contribute to this project, __please fork this repository and create a pull request__. Any contributions you make are greatly appreciated!
+If you want to contribute to this project, <ins>please fork this repository and create a pull request</ins>. Any contributions you make are greatly appreciated!
 
 ## License
 
