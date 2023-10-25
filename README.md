@@ -1,6 +1,6 @@
 # Car Shop Website
 
-This repository contains the source code for a car shop website. It's a simple and user-friendly platform for users to browse and purchase cars.
+This repository contains the source code for a car shop management website. It's a simple and user-friendly platform for managers or admins to manage their car shop information online.
 
 ## Table of Contents
 
@@ -21,6 +21,7 @@ These instructions will get you a copy of the project up and running on your loc
 Before you begin, ensure you have met the following requirements:
 
 - You have installed the latest version of PHP and MySQL.
+- You have installed XAMMP or Laragon for local webserver or webserver you want to use
 - You have a Windows/Linux/Mac machine.
 
 ### Installation
@@ -33,10 +34,14 @@ bash cd carshopWebsite
 
 ## Usage
 
-To use the car shop website, follow these steps:
+To use the car shop management website, follow these steps:
 
 - Open your web browser and navigate to `localhost:[port]` (replace `[port]` with the port number your server is running on).
-- Browse the selection of cars and choose the one you're interested in.
+- Create/Register an account.
+- Login using your registered credentials.
+- Browse, add, delete, view, and edit the cars available in your shop for each branch.
+- Browse, add, delete, view, and edit your car shop's branches for each location.
+- Browse, add, delete, view, and edit your customers' basic information and transaction.
 
 ## Contributing
 
