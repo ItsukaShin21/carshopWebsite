@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 function validateForm() {
     var username = document.getElementById("username").value;
     var email = document.getElementById("email").value;
@@ -46,6 +44,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
-
->>>>>>> Stashed changes
