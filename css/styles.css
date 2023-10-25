@@ -9,9 +9,18 @@
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
 }
+<<<<<<< Updated upstream
 body {
     overflow-x: hidden;
+=======
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+>>>>>>> Stashed changes
 }
 .bg {
     background: linear-gradient(85deg, #50ef4a, #29b824, #18a813);
@@ -109,38 +118,44 @@ td {
 /**Login Page **/
 .loginBody {
     background-color: #0F0F0F;
-    font-family: Noto Sans;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
     box-sizing: border-box;
     color: white;
     overflow: hidden;
   }
+  .transparentbgLogin {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 65%, #545555);
+    z-index: 1;
+  }
   .loginContainer {
     position: absolute;
-    z-index: 1;
-    width: 250px;
-    margin-top: 120px;
-    padding: 20px;
+    z-index: 2;
+    width: 20%;
+    padding: 1.5%;
     border: 2px solid white;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    top: 20px;
-    left: 60px;
+    top: 28%;
+    right: 70%;
   }
   .loginBackground {
     position: absolute;
     z-index: 0;
     width: 100%;
+    height: 100%;
   }
   .loginContainer h2 {
     text-align: center;
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 5%;
     color: white;
-    -webkit-text-stroke: #000 0.3px;
+    -webkit-text-stroke: #000 0.5px;
   }
   .loginContainer input[type="text"],
   .loginContainer input[type="password"] {
@@ -150,7 +165,7 @@ td {
     padding: 1px;
     border-radius: 20px;
     border: 1px solid #fff;
-    margin-bottom: 10px;
+    margin-bottom: 5%;
     background: transparent;
     color: #fff;
     text-align: left;
@@ -167,7 +182,7 @@ td {
     padding: 10px;
     border-radius: 20px;
     border: none;
-    margin-top: 20px;
+    margin-top: 7%;
     color: #fff;
     background: linear-gradient(to right, lightblue, blue);
     text-align: center;
@@ -181,13 +196,9 @@ td {
   .loginContainer button:hover {
     background: var(--hovergradientbutton);
   }
-  .loginContainer .remember-me {
-    text-align: left;
-    margin-top: 10px;
-  }
   .loginContainer p {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 5%;
     font-size: 12px;
   }
   a {
@@ -199,39 +210,43 @@ td {
 /**Register Page**/
 .registerBody {
     background-color: #0F0F0F;
-    font-family: Noto Sans;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+    height: 100%;
     box-sizing: border-box;
     color: white;
     overflow: hidden; /* Prevent scrolling */
   }
   .registerContainer {
     position: absolute;
-    z-index: 1;
-    width: 250px;
-    padding: 20px;
-    margin-top: 95px;
+    z-index: 2;
+    width: 20%;
+    padding: 1.5%;
     border: 2px solid white; /* white outline for the form */
     background-color: rgba(255, 255, 255, 0.1); /* Add a transparent background */
     border-radius: 20px; /* 20px radius for the form */
-    top: 20px; /* Add a top position to move the form to the top */
-    left: 60px; /* Add a left position to move the form to the left */
+    top: 20%; /* Add a top position to move the form to the top */
+    left: 3%; /* Add a left position to move the form to the left */
   }
   .registrationBackground {
     position: absolute;
     z-index: 0;
+    height: 100%;
     width: 100%; /* Adjust the width as needed for your image */
+  }
+  .transparentbgRegister {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 65%, #e5d1b8);
+    z-index: 1;
   }
   .registerContainer h2 {
     text-align: center;
     font-size: 24px;
-    margin-bottom: 20px;
-    -webkit-text-stroke: #000 0.3px;
+    margin-bottom: 5%;
+    -webkit-text-stroke: #000 0.5px;
   }
   .registerContainer input[type="text"],
   .registerContainer input[type="email"],
@@ -284,3 +299,263 @@ td {
   }
 /**Register Page**/
 
+<<<<<<< Updated upstream
+=======
+/**BranchList Page**/
+.bg {
+  background: linear-gradient(180deg, #b3eaf1 60%, #d1cf7e, #deba37);
+  background-attachment: fixed;
+  height: auto;
+  width: 100%;
+}
+.headerContainers {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+}
+.headerContainer1 {
+  height: 7vh;
+  width: 100%;
+  background: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.headerContainer2 {
+  height: 8vh;
+  width: 100%;
+  display: flex;
+  background: #fff;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.logoutBtn {
+  padding-right: 3%;
+  color: #fff;
+  font-weight: bold;
+}
+.webLogo {
+  width: 75%;
+  display: flex;
+  align-self: center;
+  padding-left: 10%;
+}
+.navBtns {
+  font-weight: bold;
+  width: 35%;
+  align-content: center;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+}
+.navBtns a {
+  color: #000;
+}
+.addBtn {
+  margin: 0px 0px 0px 85px;
+  border-radius: 20px;
+  border: none;
+  width: 120px;
+  height: 28px;
+  color: var(--fontcolor1);
+  background: var(--gradientbutton);
+}
+.mainSection {
+  height: auto;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+.branchlistTable {
+  display: flex;
+  margin: 15% 0px 0px 0px;
+  justify-content: center;
+}
+table {
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 12px;
+}
+th {
+  width: 280px;
+  height: 40px;
+  background: #fff;
+}
+th:first-of-type {
+  border-top-left-radius: 10px;
+}
+th:last-of-type {
+  border-top-right-radius: 10px;
+}
+td {
+  width: 280px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.603);
+}
+td:last-of-type {
+  align-items: center;
+}
+td:nth-child(6) {
+  display: flex;
+  align-items: center;
+}
+tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 10px;
+}
+tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 10px;
+}
+.tableBtn {
+  border: none;
+  background: var(--gradientbutton);
+  width: 80px;
+  height: 25px;
+  margin: 0px 0px 0px 10px;
+  border-radius: 20px;
+  color: var(--fontcolor1);
+}
+.tableBtn:hover, .addBtn:hover {
+  background: var(--hovergradientbutton);
+}
+.addForm {
+  height: 85%;
+  width: 30%;
+  background: rgba(255, 255, 255, 0.603);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  left: 70%;
+  margin: 15vh 0% 0% 0%;
+}
+.addForm form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  height: 90%;
+}
+.addForm p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 40% 0% 10% 0%;
+  width: 100%;
+}
+.addForm .addbranchTxt {
+  height: 40px;
+  width: 120%;
+  text-indent: 10px;
+  border-radius: 20px;
+  border: 1px solid #000;
+  margin: 10% 0% 10% 0%;
+}
+.branchaddBtn {
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  background: var(--gradientbutton);
+  color: var(--fontcolor1);
+  margin: 10% 0% 0% 0%;
+}
+.branchaddBtn:hover {
+  background: var(--hovergradientbutton);
+}
+.branchlistTable table tbody tr form:nth-child(2) {
+  width: 50%;
+}
+/**BranchList Page**/
+
+/**CarPage**/
+.carlistTable {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 15% 0% 0% 0%;
+}
+.carlistTable table {
+  width: 95%;
+  text-align: center;
+}
+.cardescriptxtbox {
+  text-indent: 5px;
+  resize: none;
+  width: 110%;
+  text-align: justify;
+  white-space: normal;
+}
+.addcarTxt {
+  height: 40px;
+  width: 120%;
+  text-indent: 10px;
+  border-radius: 20px;
+  border: 1px solid #000;
+  margin: 10% 0% 10% 0%;
+}
+.addcarForm p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10% 0% 10% 0%;
+  width: 100%;
+}
+/**CarPage**/
+
+/**Customer Page**/
+.addcustomerForm p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 25% 0% 10% 0%;
+  width: 100%;
+}
+.addcustomerTxt {
+  height: 40px;
+  width: 110%;
+  text-indent: 10px;
+  border-radius: 20px;
+  border: 1px solid #000;
+  margin: -2% 0% 9% 0%;
+}
+.addcustomerBtn {
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  background: var(--gradientbutton);
+  color: var(--fontcolor1);
+  margin: 3% 0% 0% 0%;
+}
+.customerlistTable {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  margin: 15% 0% 0% 3%;
+}
+.customerlistTable table {
+  margin: 0% 0% 5% 0%;
+}
+caption {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0px 0px 10px 0px;
+}
+.customerlistTable {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+}
+/**Customer Page**/
+/**Carpageperbranch**/
+.mainsectionCpprb {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/**Carpageperbranch**/
+>>>>>>> Stashed changes
