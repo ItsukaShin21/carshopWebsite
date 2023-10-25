@@ -44,7 +44,7 @@ If you want to contribute to this project, please fork this repository and creat
 
 ## License
 
-This project uses the following license: [Add license name here](link).
+This project uses the following license: [Eclipse Public License - v 2.0](https://github.com/ItsukaShin21/carshopWebsite/blob/master/LICENSE).
 
 ## Contact
 
