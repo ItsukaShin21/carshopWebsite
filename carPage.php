@@ -2,6 +2,7 @@
     require_once('db_connection.php');
     require_once ('../carshopWebsite/dataControllers/carControllers/addCar.php');
     require_once('../carshopWebsite/dataControllers/carControllers/deleteCar.php');
+    require_once('./dataControllers/carControllers/updateCar.php');
 ?>
 
 <!DOCTYPE html>
@@ -56,8 +57,6 @@
                 <textarea name="carDescription" cols="5" rows="7" placeholder="Car Description" class="cardescriptxtbox" required><?php require_once('./dataControllers/carControllers/descriptionFetcher.php') ?></textarea>
                 <input type="submit" name="addcar_button" value="ADD CAR" class="branchaddBtn">
                 <input type="submit" name="updatecar_button" value="UPDATE CAR" class="branchaddBtn">
-
-                <?php require_once('./dataControllers/carControllers/updateCar.php'); ?>
             </form>
         </div>
     </div>

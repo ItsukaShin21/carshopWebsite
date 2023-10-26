@@ -3,7 +3,7 @@
   --fontcolor2: #000;
   --gradientbutton: linear-gradient(to right, rgb(183, 149, 98), rgb(150, 94, 31));
   --hovergradientbutton: linear-gradient(to right, rgb(231, 187, 121), rgb(217, 139, 51));
-  --placeholderfontcolor: #00000032;
+  --placeholderfontcolor: #00000085;
   --placeholderfocuscolor: #fff;
 }
 
@@ -33,7 +33,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, transparent 65%, #545555);
+  background: linear-gradient(to right, transparent 75%, #9b713f);
   z-index: 1;
 }
 .loginContainer {
@@ -42,7 +42,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
   width: 20%;
   padding: 1.5%;
   border: 2px solid white;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(184, 168, 148, 0.423);
   border-radius: 20px;
   top: 28%;
   right: 70%;
@@ -127,7 +127,7 @@ a {
   width: 20%;
   padding: 1.5%;
   border: 2px solid white; /* white outline for the form */
-  background-color: rgba(255, 255, 255, 0.1); /* Add a transparent background */
+  background-color: rgba(184, 168, 148, 0.423); /* Add a transparent background */
   border-radius: 20px; /* 20px radius for the form */
   top: 20%; /* Add a top position to move the form to the top */
   left: 3%; /* Add a left position to move the form to the left */

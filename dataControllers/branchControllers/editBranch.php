@@ -9,7 +9,5 @@
 
         $sql = "UPDATE branch SET branchname = '$branchname' WHERE branchID = '$branchid'";
         $conn -> query($sql);
-        
-        header('Location: branchlistPage.php');
     }
 ?>

@@ -2,6 +2,8 @@
     require_once('db_connection.php');
     require_once('./dataControllers/branchControllers/addBranch.php');
     require_once('./dataControllers/branchControllers/deleteBranch.php');
+    require_once('./dataControllers/branchControllers/viewCars.php');
+    require_once('./dataControllers/branchControllers/editBranch.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,10 +51,6 @@
                     <input type = "text" name = "branchname" placeholder = "Name of the branch" class = "addbranchTxt" id = "branchtxtBox" required value = "<?php require_once('./dataControllers/branchControllers/branchnameFetcher.php') ?>">       
                     <input type = "submit" name = "add_branch" id = "add_branch" value = "ADD BRANCH" class = "branchaddBtn">
                     <input type = "submit" name = "edit_branchbtn" id = "edit_branchbtn" class = "branchaddBtn" value = "EDIT BRANCH">
-                    <?php
-                        require_once('./dataControllers/branchControllers/editBranch.php');
-                        require_once('./dataControllers/branchControllers/viewCars.php');
-                    ?>
                 </form>
             </div>
         </div>
