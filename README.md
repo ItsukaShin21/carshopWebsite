@@ -1,5 +1,6 @@
 #  Under Maintenance 
-<span style = 'color:red;'>Website is under heavy maintenance!</span>
+$${\color{red}Website \space is \space under \space heavy \space maintenance \space due \space to \space a \space number \space of \space bugs!}$$
+
 
 # Car Shop Website
 
