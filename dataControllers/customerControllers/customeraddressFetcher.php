@@ -1,7 +1,7 @@
 <?php
     // This controller is for fetching the data in database
     require_once('C:\xampp\htdocs\carshopWebsite\db_connection.php');
-    
+
     if(isset($_POST['edit_customer'])) {
         $customerid = $_POST['customerid'];
 

@@ -8,8 +8,13 @@
         $branchname = $_POST['branchname'];
 
         $sql = "UPDATE branch SET branchname = '$branchname' WHERE branchID = '$branchid'";
-        $conn -> query($sql);
         
-        header('Location: branchlistPage.php');
+        $conn->begin_transaction();
+
+        if($conn->query($sql) === TRUE) {
+                $conn->commit();
+            } else {
+                $conn->rollback();
+            }
     }
 ?>

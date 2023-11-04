@@ -1,5 +1,4 @@
 <?php
-
     // Get the selected branch
     $selectedBranch = $_POST['branch'];
 

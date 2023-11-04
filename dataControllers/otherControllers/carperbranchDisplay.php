@@ -25,8 +25,12 @@
             $carID = $branchRow['carID'];
             $carname = $branchRow['carname'];
             $description = $branchRow['description'];
-            $soldcar = $branchRow['sold'];
             $price = $branchRow['price'];
+
+            $sql1 = "SELECT COUNT(*) AS cars_count FROM customer WHERE buyedcar = '$carname' AND branch = '$branchname'";
+            $result = $conn->query($sql1);
+            $row = $result->fetch_assoc();
+            $soldcar = $row['cars_count'];
 
             echo '<form method = "GET">';
             echo '<input type="hidden" name="carname" value="' . $carname . '">';

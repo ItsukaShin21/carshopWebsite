@@ -11,30 +11,17 @@ function validateForm() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    
+    // For select values in customerlistPage
     var branchSelect = document.getElementById('branch');
     var buyedcarSelect = document.getElementById('buyedcar');
     
-    branchSelect.addEventListener('input', function() {
+    branchSelect.addEventListener('change', function() {
         var branch = this.value;
         var formData = new FormData();
         formData.append('branch', branch);
         
-        fetch('customerlistPage.php', {
-            method: 'POST',
-            body: formData,
-        })
-        .then(response => response.text())
-        .then(data => {
-            buyedcarSelect.innerHTML = data;
-        });
-    });
-
-    branchSelect.addEventListener('focus', function() {
-        var branch = this.value;
-        var formData = new FormData();
-        formData.append('branch', branch);
-        
-        fetch('customerlistPage.php', {
+        fetch('carslist.php', {
             method: 'POST',
             body: formData,
         })
@@ -44,3 +31,73 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+    $(document).ready(function() {
+        $('.delete_customer').on('click', function(event) {
+            var confirmation = confirm('Delete this customer?');
+            
+            if (confirmation) {
+                var customerID = $(this).data('customerid');
+                
+                // Make an Ajax request to delete the customer
+                $.ajax({
+                    type: 'POST',
+                    url: 'deleteCustomer.php',
+                    data: { customerID: customerID },
+                    success: function(response) {
+                        alert(response);
+                        location.reload();
+                    }
+                });
+            } else {
+                event.preventDefault();
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        $('.delete_car').on('click', function(event) {
+            event.preventDefault();
+            var confirmation = confirm('Delete this car?');
+
+            if(confirmation) {
+                var carID = $(this).data('carid');
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'deleteCar.php',
+                    data: {carID: carID},
+                    success: function(response) {
+                        alert(response);
+                        location.reload();
+                    }
+                });
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        $('.delete_branch').on('click', function(event) {
+            event.preventDefault();
+            var branchID = $(this).data('branchid');
+            var branchName = $(this).data('branchname');
+    
+            var confirmation = confirm('Delete this branch?');
+    
+            if (confirmation) {
+                $.ajax({
+                    type: 'POST',
+                    url: 'deleteBranch.php',
+                    data: {
+                        branchID: branchID,
+                        branchName: branchName
+                    },
+                    success: function(response) {
+                        alert(response);
+                        location.reload();
+                    }
+                });
+            }
+        });
+    });
+    

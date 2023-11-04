@@ -31,7 +31,10 @@
                         echo "<script>alert('The car already exists in the branch, choose a different name or branch')</script>";
                     } else {
                         // Car doesn't exist in the branch; update the data in the database
-                        $sql = "UPDATE cars SET carname = '$carName', branch = '$branch', description = '$carDescription', price = '$carprice' WHERE carID = '$carID'";
+                        echo "<script>alert('Car Edited!!')</script>";
+                        $sql = "UPDATE cars
+                        SET carname = '$carName', branch = '$branch', description = '$carDescription', price = '$carprice'
+                        WHERE carID = '$carID' AND branch = '$branch'";
                         $conn->query($sql);
                     }
                 }
