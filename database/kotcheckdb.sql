@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2023 at 11:01 AM
+-- Generation Time: Nov 04, 2023 at 07:53 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -33,6 +33,13 @@ CREATE TABLE `branch` (
   `soldcars` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `branch`
+--
+
+INSERT INTO `branch` (`branchID`, `branchname`, `soldcars`) VALUES
+(40, 'Tacloban', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +55,13 @@ CREATE TABLE `cars` (
   `price` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `cars`
+--
+
+INSERT INTO `cars` (`carID`, `carname`, `branch`, `description`, `sold`, `price`) VALUES
+(69, 'Car1', 'Tacloban', 'asdasdasd', 0, 123131);
+
 -- --------------------------------------------------------
 
 --
@@ -55,14 +69,21 @@ CREATE TABLE `cars` (
 --
 
 CREATE TABLE `customer` (
-  `customerID` int(10) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `contact` varchar(20) NOT NULL,
-  `address` varchar(255) NOT NULL,
-  `branch` varchar(255) NOT NULL,
-  `buyedcar` varchar(255) NOT NULL,
-  `datepurchased` varchar(20) NOT NULL
+  `customerID` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `contact` varchar(11) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `branch` varchar(255) DEFAULT NULL,
+  `buyedcar` varchar(255) DEFAULT NULL,
+  `datepurchased` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`customerID`, `name`, `contact`, `address`, `branch`, `buyedcar`, `datepurchased`) VALUES
+(29, 'John Mark', '1312313', 'sdasdsa', 'Tacloban', 'Car1', '2023-11-03');
 
 -- --------------------------------------------------------
 
@@ -92,19 +113,24 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 -- Indexes for table `branch`
 --
 ALTER TABLE `branch`
-  ADD PRIMARY KEY (`branchID`);
+  ADD PRIMARY KEY (`branchID`),
+  ADD KEY `branchname` (`branchname`);
 
 --
 -- Indexes for table `cars`
 --
 ALTER TABLE `cars`
-  ADD PRIMARY KEY (`carID`);
+  ADD PRIMARY KEY (`carID`),
+  ADD KEY `carname` (`carname`,`branch`),
+  ADD KEY `branch` (`branch`);
 
 --
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
-  ADD PRIMARY KEY (`customerID`);
+  ADD PRIMARY KEY (`customerID`),
+  ADD KEY `branch` (`branch`),
+  ADD KEY `buyedcar` (`buyedcar`);
 
 --
 -- Indexes for table `users`
@@ -120,25 +146,41 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `branch`
 --
 ALTER TABLE `branch`
-  MODIFY `branchID` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `branchID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `carID` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `carID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customerID` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `customerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(150) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cars`
+--
+ALTER TABLE `cars`
+  ADD CONSTRAINT `cars_ibfk_1` FOREIGN KEY (`branch`) REFERENCES `branch` (`branchname`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `customer`
+--
+ALTER TABLE `customer`
+  ADD CONSTRAINT `customer_ibfk_1` FOREIGN KEY (`buyedcar`) REFERENCES `cars` (`carname`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
