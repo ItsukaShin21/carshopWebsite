@@ -19,7 +19,8 @@
 
             if ($branchExists > 0) {
                 // The branch exists; now check if the car already exists in that branch
-                $sql = "SELECT COUNT(*) as carExists FROM cars WHERE branch = '$branch' AND carname = '$carName'";
+                $sql = "SELECT COUNT(*) as carExists FROM cars WHERE branch = '$branch' AND carname = '$carName' 
+                AND branch = '$branch' AND description = '$carDescription' AND price = '$carprice'";
                 $result = $conn->query($sql);
     
                 if ($result) {
@@ -31,8 +32,12 @@
                         echo "<script>alert('The car already exists in the branch, choose a different name or branch')</script>";
                     } else {
                         // Car doesn't exist in the branch; update the data in the database
-                        $sql = "UPDATE cars SET carname = '$carName', branch = '$branch', description = '$carDescription', price = '$carprice' WHERE carID = '$carID'";
+                        $sql = "UPDATE cars
+                        SET carname = '$carName', branch = '$branch', description = '$carDescription', price = '$carprice'
+                        WHERE carID = '$carID'";
+
                         $conn->query($sql);
+
                     }
                 }
             } else {

@@ -302,8 +302,10 @@ td:last-of-type {
 align-items: center;
 }
 td:nth-child(6) {
-display: flex;
 align-items: center;
+}
+.branchlistTable table td:nth-child(6) {
+  display: flex;
 }
 tr:last-of-type td:first-of-type {
 border-bottom-left-radius: 10px;
@@ -373,14 +375,17 @@ width: 50%;
 
 /**CarPage**/
 .carlistTable {
-width: 100%;
+width: 90%;
 display: flex;
 justify-content: center;
 margin: 15% 0% 0% 0%;
 }
 .carlistTable table {
-width: 95%;
+width: 100%;
 text-align: center;
+}
+.carlistTable table td:nth-child(7) {
+display: flex;
 }
 .cardescriptxtbox {
 text-indent: 5px;
@@ -429,6 +434,9 @@ background: var(--gradientbutton);
 color: var(--fontcolor1);
 margin: 3% 0% 0% 0%;
 }
+.addcustomerBtn:hover {
+  background: var(--hovergradientbutton);
+}
 .customerlistTable {
 display: flex;
 width: 90%;
@@ -438,6 +446,9 @@ margin: 15% 0% 0% 3%;
 }
 .customerlistTable table {
 margin: 0% 0% 5% 0%;
+}
+.customerlistTable table td:nth-child(6) {
+  display: flex;
 }
 caption {
 font-size: 16px;
@@ -449,6 +460,10 @@ display: flex;
 flex-direction: column;
 width: 90%;
 justify-content: center;
+}
+.buyedcardiv {
+  width: 109%;
+  height: 40px;
 }
 /**Customer Page**/
 /**Carpageperbranch**/

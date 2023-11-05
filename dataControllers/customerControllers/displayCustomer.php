@@ -2,7 +2,6 @@
     // This controller is for displaying the data
     require_once('C:\xampp\htdocs\carshopWebsite\db_connection.php');
 
-                    
     // Query to fetch unique branches
     $sqlBranches = "SELECT branchname FROM branch";
     $branchList = $conn->query($sqlBranches);
@@ -21,7 +20,7 @@
                     <th></th>
                 </thead>
                 <tbody>';
-                        
+
     // Query to fetch customers for the current branch
     $sqlView = "SELECT * FROM customer WHERE branch = '$branch'";
     $list = $conn -> query($sqlView);
@@ -42,10 +41,10 @@
                 <td>'.$buyedcar.'</td>
                 <td>
                 <form method = "POST">
-                <input type = "hidden" name = "customerid" value = "'.$customerID.'"><input type = "hidden" name = "buyedcar" value = "'.$buyedcar.'";
+                <input type = "hidden" id="customerid" name = "customerid" value = "'.$customerID.'"><input type = "hidden" name = "buyedcar" value = "'.$buyedcar.'";
                 <input type = "hidden" name = "customername" value = "'.$name.'">
-                <input type="submit" name = "edit_customer" id = "edit_customer" value="EDIT" class="tableBtn">
-                <input type="submit" name = "delete_customer" value="DELETE" class="tableBtn">
+                <input type="submit" name="edit_customer" class="tableBtn edit_customer" id="editBtn" value="EDIT">
+                <input type="submit" name="delete_customer" id="delete_customer" class="tableBtn delete_customer" value="DELETE" data-customerid="'.$customerID.'">
                 </form>
                 </td>
                 </tr>';

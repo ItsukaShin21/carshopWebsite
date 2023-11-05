@@ -1,7 +1,12 @@
 <?php 
+<<<<<<< Updated upstream
     require_once('db_connection.php');
     require_once ('../carshopWebsite/dataControllers/carControllers/addCar.php');
     require_once('../carshopWebsite/dataControllers/carControllers/deleteCar.php');
+=======
+    require_once('C:\xampp\htdocs\carshopWebsite\db_connection.php');
+    require_once ('./dataControllers/carControllers/addCar.php');
+>>>>>>> Stashed changes
     require_once('./dataControllers/carControllers/updateCar.php');
 ?>
 
@@ -13,7 +18,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KotCheck | Cars</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="javascript" href="./script/script.js">
+    <script src="./script/jqueryscript.js"></script>
+    <script src="./script/script.js"></script>
 </head>
 
 <body class="bg">
@@ -37,6 +43,7 @@
             <table>
                 <thead>
                     <th>Car Code</th>
+                    <th>Branch</th>
                     <th>Description</th>
                     <th>Price</th>
                     <th></th>
@@ -48,12 +55,18 @@
         </div>
 
         <div class="addForm addcarForm">
-            <form method="POST">
+            <form method="POST" id="carForm">
                 <p>ADD CAR</p>
                 <input type="hidden" name="car_code" value="<?php require_once('./dataControllers/carControllers/caridFetcher.php') ?>"> 
                 <input type="text" name="carName" placeholder="Name of the car" class="addcarTxt" required value="<?php require_once('./dataControllers/carControllers/carnameFetcher.php') ?>"> 
                 <input type="number" name="carPrice" placeholder="Price of the car" class="addcarTxt" required value="<?php require_once('./dataControllers/carControllers/carpriceFetcher.php') ?>">
-                <input type="text" name="branch_name" placeholder="Branch" class="addcarTxt" required value="<?php require_once('./dataControllers/carControllers/branchnameFetcher.php') ?>">
+                
+                <select name="branch_name" placeholder="Branch" class="addcarTxt" required >
+                
+                <option value="">Choose Branch</option>
+                <?php require_once('./dataControllers/otherControllers/fetch_branches.php') ?>
+                </select>
+                
                 <textarea name="carDescription" cols="5" rows="7" placeholder="Car Description" class="cardescriptxtbox" required><?php require_once('./dataControllers/carControllers/descriptionFetcher.php') ?></textarea>
                 <input type="submit" name="addcar_button" value="ADD CAR" class="branchaddBtn">
                 <input type="submit" name="updatecar_button" value="UPDATE CAR" class="branchaddBtn">

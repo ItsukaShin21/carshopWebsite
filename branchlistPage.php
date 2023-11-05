@@ -1,7 +1,10 @@
 <?php
     require_once('db_connection.php');
     require_once('./dataControllers/branchControllers/addBranch.php');
+<<<<<<< Updated upstream
     require_once('./dataControllers/branchControllers/deleteBranch.php');
+=======
+>>>>>>> Stashed changes
     require_once('./dataControllers/branchControllers/viewCars.php');
     require_once('./dataControllers/branchControllers/editBranch.php');
 ?>
@@ -12,7 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KotCheck | Branch</title>
     <link rel = "stylesheet" href = "./css/styles.css">
-    <link rel = "javacript" href = "./script/script.js">
+    <script src="./script/jqueryscript.js"></script>
+    <script src="./script/script.js"></script>
 </head>
 <body class = "bg">
         <div class = "headerContainers">
@@ -30,6 +34,7 @@
             </div>
             </div>
         </div>
+        
         <div class = "mainSection">
             <div class = "branchlistTable">
                 <table>

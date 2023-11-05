@@ -1,10 +1,10 @@
 <?php
     // This controller is for adding the data in database
-    require_once('C:\xampp\htdocs\carshopWebsite\db_connection.php');
+    require_once('db_connection.php');
 
-    // Function to add customer
-    if (isset($_POST['addcustomerBtn'])) {
+        // Function to add customer
         // Retrieve the selected values
+    if(isset($_POST['addcustomerBtn'])) {
         $name = $_POST['name'];
         $contact = $_POST['contact'];
         $address = $_POST['address'];
@@ -23,9 +23,7 @@
                 $sqladdCustomer = "INSERT INTO customer (name, contact, address, branch, buyedcar, datepurchased) 
                 VALUES ('$name', '$contact', '$address', '$branch', '$buyedcar', NOW())";
 
-                $sqladdsoldCount = "UPDATE cars SET sold = sold + 1 WHERE carname = '$buyedcar'";
                 $conn->query($sqladdCustomer);
-                $conn->query($sqladdsoldCount);
             } else {
                 // Branch doesn't exist, handle the error or provide feedback to the user
                 echo "<script>alert('The branch does not exist, choose a valid one')</script>";
